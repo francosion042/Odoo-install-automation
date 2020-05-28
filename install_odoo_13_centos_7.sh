@@ -52,9 +52,9 @@ sudo mkdir /etc/odoo;
 
 sudo mkdir /var/log/odoo/;
 
-chown -R odoo:odoo /opt/odoo/;
+sudo chown -R odoo:odoo /opt/odoo/;
 
-chown -R odoo:odoo /var/log/odoo/;
+sudo chown -R odoo:odoo /var/log/odoo/;
 
 sudo git clone --depth=1 https://github.com/odoo/odoo.git /opt/odoo/odoo;
 
@@ -62,7 +62,7 @@ sudo pip3.6 install  -r /opt/odoo/odoo/requirements.txt;
 
 sudo su - odoo -c "/opt/odoo/odoo/odoo-bin --addons-path=/opt/odoo/odoo/addons -s --stop-after-init";
 
-mv /opt/odoo/.odoorc /etc/odoo/odoo.conf;
+sudo mv /opt/odoo/.odoorc /etc/odoo/odoo.conf;
 
 sudo sed -i "s,^\(logfile = \).*,\1"/var/log/odoo/odoo-server.log"," /etc/odoo/odoo.conf;
 
